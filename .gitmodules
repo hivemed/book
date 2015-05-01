@@ -1,0 +1,4 @@
+[submodule "build/html"]
+	path = build/html
+	url = git@github.com:hivemed/book.git
+	branch = gh-pages
