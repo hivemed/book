@@ -12,7 +12,9 @@ all: book
 book: epub html pdf
 
 clean:
-	rm -r $(BUILD)
+	rm -r $(BUILD)/epub
+	rm -r $(BUILD)/html/*
+	rm -r $(BUILD)/pdf
 
 epub: $(BUILD)/epub/$(BOOKNAME).epub
 
@@ -29,6 +31,7 @@ $(BUILD)/html/$(BOOKNAME).html: $(CHAPTERS)
 	mkdir -p $(BUILD)/html/assets
 	cp assets/* $(BUILD)/html/assets
 	pandoc $(TOC) --standalone --to=html5 --template templates/template.html --css assets/template.css -o $@ $^
+	ln -s $@ $(BUILD)/html/index.html
 
 $(BUILD)/pdf/$(BOOKNAME).pdf: $(TITLE) $(CHAPTERS)
 	mkdir -p $(BUILD)/pdf
