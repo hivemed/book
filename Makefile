@@ -3,7 +3,6 @@ BOOKNAME = hivemed
 BROWSER = google-chrome
 TITLE = title.txt
 METADATA = metadata.xml
-# CHAPTERS = ch01.md ch02.md
 CHAPTERDIR = chapters
 CHAPTERS = $(CHAPTERDIR)/sympdiag.md $(CHAPTERDIR)/diagalg.md
 TOC = --toc --toc-depth=2
