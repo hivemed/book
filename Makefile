@@ -1,7 +1,7 @@
 BUILD = build
 BOOKNAME = hivemed
 BROWSER = google-chrome
-TITLE = title.txt
+TITLE = title.md
 METADATA = metadata.xml
 CHAPTERDIR = chapters
 CHAPTERS = $(CHAPTERDIR)/001-sympdiag.md $(CHAPTERDIR)/002-diagalg.md
@@ -14,9 +14,9 @@ all: book
 book: epub html pdf
 
 clean:
-	rm -r $(BUILD)/epub
-	rm -r $(BUILD)/html/*
-	rm -r $(BUILD)/pdf
+	rm -fr $(BUILD)/epub
+	rm -fr $(BUILD)/html/*
+	rm -fr $(BUILD)/pdf
 
 epub: $(BUILD)/epub/$(BOOKNAME).epub
 
@@ -28,7 +28,7 @@ $(BUILD)/epub/$(BOOKNAME).epub: $(TITLE) $(CHAPTERS)
 	mkdir -p $(BUILD)/epub
 	pandoc $(TOC) -S --epub-metadata=$(METADATA) --epub-cover-image=$(COVER_IMAGE) -o $@ $^
 
-$(BUILD)/html/$(BOOKNAME).html: $(CHAPTERS)
+$(BUILD)/html/$(BOOKNAME).html: $(TITLE) $(CHAPTERS)
 	mkdir -p $(BUILD)/html
 	mkdir -p $(BUILD)/html/assets
 	cp assets/* $(BUILD)/html/assets
