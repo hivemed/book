@@ -42,4 +42,7 @@ $(BUILD)/pdf/$(BOOKNAME).pdf: $(TITLE) $(CHAPTERS)
 preview: html
 	$(BROWSER) $(BUILD)/html/$(BOOKNAME).html
 
-.PHONY: all book clean epub html pdf preview
+gh-pages: html
+	./deploy-gh-pages.sh
+
+.PHONY: all book clean epub html pdf preview gh-pages
