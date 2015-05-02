@@ -4,7 +4,7 @@ BROWSER = google-chrome
 TITLE = title.txt
 METADATA = metadata.xml
 CHAPTERDIR = chapters
-CHAPTERS = $(CHAPTERDIR)/sympdiag.md $(CHAPTERDIR)/diagalg.md
+CHAPTERS = $(CHAPTERDIR)/001-sympdiag.md $(CHAPTERDIR)/002-diagalg.md
 TOC = --toc --toc-depth=2
 COVER_IMAGE = images/caduceus.png
 LATEX_CLASS = report
